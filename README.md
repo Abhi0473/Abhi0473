@@ -151,7 +151,6 @@
   .info-list li:last-child{border-bottom:none;}
   .info-list .label{color:var(--muted);font-family:var(--mono);font-size:0.78rem;}
   .info-list .value{color:var(--text);font-weight:500;text-align:right;}
-
   /* SKILLS - PROFICIENCY BARS */
   .skills-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;}
   .skill-group h3{font-family:var(--display);color:var(--text);margin-bottom:20px;font-size:1.05rem;display:flex;align-items:center;gap:10px;}
@@ -339,7 +338,6 @@
     <div class="lbl">CGPA (BCA)</div>
   </div>
 </div>
-
 <!-- ABOUT -->
 <section id="about">
   <div class="section-head reveal">
@@ -604,7 +602,6 @@
 <footer>
   © 2026 Abhilash N — root@soc-portfolio:~$ <span style="color:var(--green)">_</span>
 </footer>
-
 <script>
   // Terminal typing animation
   const lines = [
@@ -644,11 +641,9 @@
     entries.forEach(e=>{
       if(e.isIntersecting){
         e.target.classList.add('visible');
-        // animate skill bars within this element
         e.target.querySelectorAll('.skill-bar-fill').forEach(bar=>{
           bar.style.width = bar.getAttribute('data-width') + '%';
         });
-        // set stat values directly (no count-up animation)
         e.target.querySelectorAll('.num').forEach(num=>{
           if(num.dataset.animated) return;
           num.dataset.animated = 'true';
